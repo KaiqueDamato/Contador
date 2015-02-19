@@ -15,6 +15,15 @@
     int girl;
 }
 
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken = 0;
+    __strong static Contador *instance = nil;
+    dispatch_once(&onceToken,^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
 -(id)init {
     self = [super init];
     if (self) {
@@ -37,6 +46,10 @@
 
 -(int)getGirls {
     return girl;
+}
+
+-(int)getTotal{
+    return [self getBoys] + [self getGirls];
 }
 
 

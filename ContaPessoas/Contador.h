@@ -11,8 +11,10 @@
 - (void)maisUmCueca;
 - (void)maisUmaGata;
 
++ (instancetype)sharedInstance;
 -(int)getBoys;
 -(int)getGirls;
+-(int)getTotal;
 
 @end
 

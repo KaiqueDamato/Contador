@@ -18,13 +18,14 @@
 
 
 - (void)testContaMeninos {
-    Contador *c = [[Contador alloc] init];
+    Contador *c = [Contador sharedInstance];
     [c maisUmCueca];
     XCTAssert(([c getBoys] == 1), @"Pass");
+    XCTAssert(([c getGirls] == 0), @"Pass");
 }
 
 - (void)testContaMeninas {
-    Contador *c = [[Contador alloc] init];
+    Contador *c = [Contador sharedInstance];
     [c maisUmaGata];
     XCTAssert(([c getGirls] == 1), @"Pass");
     XCTAssert(([c getBoys] == 0), @"Pass");

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Contador.h"
 
 @interface ContadorTests : XCTestCase
 
@@ -35,6 +36,11 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testGetTotal {
+    Contador *c = [[Contador alloc] init];
+    XCTAssert(([c getBoys] + [c getGirls] == [c getTotal]), @"Pass");
 }
 
 @end
