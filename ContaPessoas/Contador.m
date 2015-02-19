@@ -35,9 +35,11 @@
 
 - (void)maisUmCueca {
     boy = boy + 1;
+    [[self delegate] refresh];
 }
 - (void)maisUmaGata {
     girl++;
+    [[self delegate] refresh];
 }
 
 -(int)getBoys {

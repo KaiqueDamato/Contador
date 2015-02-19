@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "Contador.h"
+#import "SecondViewController.h"
 
 @interface FirstViewController ()
 
