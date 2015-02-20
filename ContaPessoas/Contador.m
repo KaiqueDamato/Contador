@@ -15,6 +15,8 @@
     int girl;
 }
 
+@synthesize delegate;
+
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken = 0;
     __strong static Contador *instance = nil;
@@ -35,11 +37,11 @@
 
 - (void)maisUmCueca {
     boy = boy + 1;
-    [[self delegate] refresh];
+    [delegate refresh];
 }
 - (void)maisUmaGata {
     girl++;
-    [[self delegate] refresh];
+    [delegate refresh];
 }
 
 -(int)getBoys {
